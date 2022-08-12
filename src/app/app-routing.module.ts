@@ -8,14 +8,8 @@ const routes: Routes = [
   {path: 'bookList', component:BookComponent},
   { path: 'book/:id', component: BookDetailsComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  // {
-  //   path: 'products',
-  //   //loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
-  // },
-  // {
-  //   path: 'orders',
-  //  // loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)
-  // },
+   {path: 'products', component:LoginComponent},
+  {path: 'orders', component: RegisterComponent},
   { path: 'home', component: HomeComponent }
 ];
 
