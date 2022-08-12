@@ -1,0 +1,215 @@
+<login></login>
+<hr/>
+<br/>
+<register></register>
+<hr/>
+<br/>
+<app-book></app-book>
+<br/>
+<hr/>
+<p>App Component Works !</p>
+<img [src]="imgSrc" [width]="imgwidth" height="100px">
+<hr/>
+<br/>
+<button [class]="flag ? 'btn btn-success' : 'btn btn-danger'">Click Me !!!</button>
+<br/>
+<hr/>
+<button class="btn btn-outline-primary" [disabled]="buttonStatus">Click Me!!!</button>
+<br/>
+<hr/>
+<input id="username" type="text" value="Abhishek" class="text-center" />
+<br/>
+<hr/>
+
+<table class ="table table-bordered text-center">
+    <tr>
+        <td>No</td>
+        <td>Title</td>
+        <td>Price</td>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>fire of wing</td>
+        <td [attr.rowspan]="value">Rs. 200</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>wings fire</td>
+            
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>wings</td>
+        <td>Rs. 400</td>
+    </tr>
+</table>
+
+<!-- Class Binding -->
+<br/>
+<hr/>
+<div class="user1">
+    <button [class]="applyclass ? 'btn btn-success' : 'btn btn-danger'"> Hit Me !!!</button>
+</div>
+
+<br/>
+<hr/>
+<!-- Style Binding -->
+<div>
+    <button [style.background-color]="bgcolor ? 'yellow' : 'orange'">Enter !!!</button>
+    <button [style]="applyStyle ? styleObj1 : styleObj2">Clik Me!!</button>
+</div>
+
+<br/>
+<hr/>
+<!-- Event Binding -->
+<label>Course :</label>
+<input type="text" class="form-control" name="course" #course id="course">
+<button class="btn btn-outline-warning" (click)="updateCourse(course.value)">Update Course</button>
+<button class="btn btn-outline-danger ml-5" (click)="reset()">Reset</button>
+<h5 class="message text-warning">
+    Favourite Course Name: {{courseName}}
+</h5>
+<button (click)="changeColor()" [style.background-color]="pcolor ? 'yellow' : 'orange'">change color</button>
+<br/>
+<hr/>
+
+<!-- Two Way Binding -->
+<label>Enter Your name Here</label>
+<input type="text" [(ngModel)]="name1"> <br/>
+<div>Hi , {{ name1 }}</div>
+
+<br/>
+<hr/>
+
+<!-- Structural Directive - *ngIf -->
+
+​<div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <div class="card shadow" *ngIf="!loginSuccess && !loginFailed; else messages">
+          <div class="card-header text-center">
+            <h3 style="font-family: cursive;">Login</h3>
+          </div>
+          <form class="ml-3 mr-3 mb-3">
+            <div class="form-group">
+              <label for="userName">User Name</label>
+              <input class="form-control" type="text" name="userName" [(ngModel)]="userName">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input class="form-control" type="password" name="password" [(ngModel)]="password">
+            </div>
+            <button type="submit" class="btn btn-outline-success" (click)="login()">Login</button>
+          </form>
+        </div>
+        <ng-template #messages>
+          <div class="text-center">
+            <ng-container *ngIf="loginFailed">
+              <img src="loginfailed.png" alt="login failed">
+              <h4 style="font-family: cursive;">Invalid Credentials</h4>
+            </ng-container>
+            <ng-container *ngIf="loginSuccess">
+              <img src="loginsuccess.png" alt="login successful">
+              <h4 style="font-family: cursive;">Welcome {{userName}}!!</h4>
+            </ng-container>
+            <button class="btn btn-outline-warning" (click)="loginSuccess=loginFailed=false">Go Back</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+<hr/>
+<br/>
+
+  <p [ngStyle]="{
+    color:colorName,
+    'font-weight':fontWeight,
+    borderBottom: borderStyle
+}">
+Demo for attribute directive ngStyle
+</p>
+
+<hr/>
+<br/>
+<div [ngClass]="{bordered: isBordered}">
+  Border {{ isBordered ? "ON" : "OFF" }}
+</div>
+
+<hr/>
+<br/>
+<!-- Piping Examples -->
+<h3> {{ title | titlecase}} </h3>
+<table style="text-align:left">
+    <tr>
+        <th> Product Code </th>
+        <td> {{ productCode | slice:5:9 }} </td>
+    </tr>
+    <tr>
+        <th> Product Name </th>
+        <td> {{ productName | uppercase }} </td>
+    </tr>
+    <tr>
+        <th> Product Price </th>
+        <td> {{ productPrice | currency: 'INR':'symbol' }} </td>
+    </tr>
+    <tr>
+        <th> Purchase Date </th>
+        <td> {{ purchaseDate | date:'fullDate' | lowercase}} </td>
+    </tr>
+    <tr>
+        <th> Product Tax </th>
+        <td> {{ productTax | percent : '.2' }} </td>
+    </tr>
+    <tr>
+        <th> Product Rating </th>
+        <td>{{ productRating | number:'1.3-5'}} </td>
+    </tr>
+</table>
+
+<hr/>
+<br/>
+<app-registration-form></app-registration-form>
+<hr/>
+<br/>
+<div>
+  <h3>Routing Demo</h3>
+  <a [routerLink]="['/bookList']">{{title}}</a>
+  <br/>
+  <br/>
+  <router-outlet></router-outlet>
+</div>
+<hr/>
+<br/>
+<nav class="navbar navbar-expand-lg navbar-light custom-nav shadow-sm">
+  <a class="navbar-brand" href="#">MyFirstApp.com</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="/products">Products</a>
+      <a class="nav-item nav-link" routerLink="/orders">Orders</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+{{08/08/2022| date:'fullDate' :'fr'}}
+<br/><br/>
+<div *ngIf="selected || false; else hello"> Hello </div>
+<ng-template #hello>world</ng-template>
+<div>
+  {{'HelloWorld1' | str}}
+</div>
+<br/><hr/>
+<div [class]="fnts">
+  <p > Abhishek Kadam  </p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aperiam facere natus. Iure error odit aliquam fugit 
+    deserunt quidem nulla tempore voluptates necessitatibus. Provident, fuga qui illum molestiae ducimus ipsum.</p>
+  <button class="btn btn-primary" (click)="changefont()">change font size: {{fsize}}</button>
+</div>

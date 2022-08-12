@@ -1,0 +1,34 @@
+.table{
+    font-family: monospace;
+}
+table{
+    margin-left: 35%;
+    width: 400px;
+    height: 250px;
+}
+#username{
+    margin-left: 40%;
+}
+.user1{
+    margin-left: 45%;
+}
+img{
+    margin-left: 37%;
+}
+
+.bordered {
+	border: 1px dashed black;
+	background-color: #eee;
+}
+
+.custom-nav {
+    background-color: white;
+    /* background-color: rgb(247, 107, 137); */
+    color: black;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid black;
+    background-color: whitesmoke;
+}
+

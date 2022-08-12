@@ -1,0 +1,17 @@
+<div *ngIf="chosenBook">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 bordering-side">
+        <h3>The details of Book: {{chosenBook.id}}</h3>
+        <table [ngClass]="{'table':true}">
+          <tr>
+            <th>You have selected:</th>
+            <td>{{chosenBook.name}}</td>
+          </tr>
+          <tr>
+            <th>Stream:</th>
+            <td>{{chosenBook.stream}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>

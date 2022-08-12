@@ -1,0 +1,35 @@
+<p>Login Component Works !!!</p>
+<div class="container-fluid">
+   <div class="row mt-5">
+     <div class="col-md-6 offset-md-3">
+       <div class="card shadow" *ngIf="!loginSuccess && ! loginFailed">
+         <div class="card-header text-center">
+           <h3 style="font-family: cursive;">Login</h3>
+         </div>
+         <form class="ml-3 mr-3 mb-3">
+           <div class="form-group">
+             <label for="userName">User Name</label>
+             <input class="form-control" type="text" name="userName" [(ngModel)]="userName">
+           </div>
+           <div class="form-group">
+             <label for="password">Password</label>
+             <input class="form-control" type="password" name="password" [(ngModel)]="password">
+           </div>
+           <button type="submit" class="btn btn-outline-success" (click)="login()">Login</button>
+         </form>
+       </div>
+       <div *ngIf="loginFailed" class="text-center">
+         <img src="loginFailed.png" alt="login failed">
+         <h4 style="font-family: cursive;">Invalid Credentials</h4>
+       </div>
+       <div *ngIf="loginSuccess" class="text-center">
+         <img src="loginSuccess.png" alt="login successful">
+         <h4 style="font-family: cursive;">Welcome {{userName}}!!</h4>
+       </div>
+       <div *ngIf="loginSuccess || loginFailed" class="text-center">
+         <button class="btn btn-outline-warning" (click)="loginSuccess=loginFailed=false">Go Back</button>
+       </div>
+     </div>
+   </div>
+ </div>
+

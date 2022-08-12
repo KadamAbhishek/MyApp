@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "HTML 5",
+        "stream": "JAVA"
+    },
+    {
+        "id": 2,
+        "name": "CSS 3",
+        "stream": "JAVA"
+    },
+    {
+        "id": 3,
+        "name": "Java Script",
+        "stream": "JAVA"
+    },
+    {
+        "id": 4,
+        "name": "VB.Net",
+        "stream": "MS"
+    },
+    {
+        "id": 5,
+        "name": "Asure",
+        "stream": "MS"
+    },
+    {
+        "id": 6,
+        "name": "C#",
+        "stream": "MS"
+    },
+    {
+        "id": 7,
+        "name": "Python",
+        "stream": "MS"
+    }
+]
