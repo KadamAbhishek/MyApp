@@ -10,7 +10,7 @@ basic project setup steps:
 1. Download dependency in project: open new integrated terminal for freeBOOKs in VScode & type : 
 	  npm install --force
    
-2. To compile Application
+2. To compile Application :
 	  ng serve
 	  ng serve --open 
 
