@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
+
+## Getting started
+
+After opening the project inside vs code,
+basic project setup steps:
+1. Download dependency in project: open new integrated terminal for freeBOOKs in VScode & type : 
+	  npm install --force
+   
+2. To compile Application
+	  ng serve
+	  ng serve --open 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
