@@ -37,3 +37,25 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+## notes
+
+1. C drive -> Program Files -> nodejs -> copy the path location of nodejs from address bar 
+-> window serach option -> type env -> edit env variable for your account -> select Path variable
+ -> click on edit option -> click on new -> paste the path
+
+2. C drive -> Users -> your name -> click on view -> check on Hidden item -> AppData folder will appear 
+-> go inside AppData -> Roaming -> create a folder -> npm -> copy the path till npm folder 
+-> type env in search bar of windows -> edit env for your account -> edit -> new -> paste 
+-> click on OK -> click on OK
+
+3. for Infy laptop only......
+	open cmd -> i) type: npm config set registry https://infyartifactory.ad.infosys.com/artifactory/api/npm/npm/
+	      ii) type: npm login https://infynp.ad.infosys.com/repository/npm-group/
+	     iii) enter your Id then password and email.
+
+4. open cmd again -> i)  type npm install -g typescript
+		     ii) type tsc -v
